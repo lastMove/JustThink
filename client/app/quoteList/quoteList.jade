@@ -1,0 +1,8 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+.col-md-12
+	| This is the quoteList view. there is {{quotes.length}} quotes 
+.container
+	.row(ng-repeat='quote in quotes')
+		{{quote.author || "Inconnu"}} a ecrit:
+		{{quote.text}}
