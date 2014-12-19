@@ -1,8 +1,16 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-.col-md-12
-	| This is the quoteList view. there is {{quotes.length}} quotes 
 .container
-	.row(ng-repeat='quote in quotes')
-		{{quote.author || "Inconnu"}} a ecrit:
-		{{quote.text}}
+	.row
+		.col-md-12
+			.panel.panel-default
+				.panel-heading
+					h2.inline-block Quotes
+					span There is {{quotes.length}} quotes
+	.row
+		.col-md-12
+			.panel.panel-default
+				.panel-body
+					div(ng-repeat='quote in quotes')
+						{{quote.author || "Inconnu"}} a ecrit:
+						{{quote.text}}
