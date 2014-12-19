@@ -38,3 +38,4 @@
     padding: 0.2em 0;
 }
 .inline-block { display: inline-block !important; margin-right: 5px; }
+.italic { font-style: italic; }
