@@ -6,8 +6,12 @@ angular.module('justThinkApp')
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
+      
     });
-
+     $http.get('/api/quotes').success(function(quotes)
+    {
+      $scope.quotes = quotes;
+    })
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;
