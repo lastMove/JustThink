@@ -4,8 +4,16 @@ angular.module('justThinkApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
+      'span' : 'glyphicon glyphicon-home',
       'link': '/'
-    }];
+    },
+    { 'title' : 'Quotes',
+      'span' : 'glyphicon glyphicon-comment',
+      'link' : '/quoteList'
+    },
+    {  'title' : 'My Quotes',
+       'span' : 'glyphicon glyphicon-user',
+       'link' : ''}];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
