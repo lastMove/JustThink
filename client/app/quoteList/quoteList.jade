@@ -2,18 +2,20 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .container
 	.row
-		.col-md-12
-			.panel.panel-default
-				.panel-heading
-					h2.inline-block Quotes
-					span.italic There is {{quotes.length}} quotes
-	.row
-		.col-md-12
-			.panel.panel-default
-				.panel-body
-					table.class(ng-table="table")
-						tbody
-							tr(ng-repeat='quote in quotes')
-								td(data-title="Author") {{quote.author || "Inconnu"}}
-								td(data-title="Quote") {{quote.text}}
-								td(data-title="Date") {{quote.date || "Inconnue" }}
+		.col-md-1
+		.col-md-10
+			.row
+				.col-md-12
+					.panel.panel-default
+						.panel-heading
+							h2.inline-block Quotes
+							span.italic There is {{quotes.length}} quotes on Just Think
+			.row
+				.col-md-12
+					.panel.panel-default
+						.panel-body
+							table.table(ng-table="tableQuotes")
+								tr(ng-repeat="quote in quotes")
+									td(data-title="'Author'" sortable="'author'") {{quote.author || "Inconnu"}}
+									td(data-title="'Quote'") {{quote.text}}
+									td(data-title="'Date'" sortable="'date'") {{quote.date || "Inconnue" }}

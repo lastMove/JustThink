@@ -8,11 +8,15 @@ header#banner.hero-unit
 
 .container
   .row
-    .col-lg-12
-      h1.page-header Recents Quotes :
-      .row(ng-repeat='quote in quotes')
-        {{quote.author || "Inconnu"}} a ecrit:
-        {{quote.text}}
+    .col-lg-2
+    .col-lg-8
+      .panel.panel-default.top20
+        .panel-heading
+          h2 Recents Quotes
+      p(ng-repeat='quote in quotes')
+        {{quote.text}} <br />
+        span.author by {{quote.author || "Inconnu"}}
+        
 
 footer.footer
   .container
