@@ -18,4 +18,4 @@ div(ng-include='"components/navbar/navbar.html"')
 								tr(ng-repeat="quote in quotes")
 									td(data-title="'Author'" sortable="'author'") {{quote.author || "Inconnu"}}
 									td(data-title="'Quote'") {{quote.text}}
-									td(data-title="'Date'" sortable="'date'") {{quote.date || "Inconnue" }}
+									td(data-title="'Date'" sortable="'date'") {{quote.created | date:'dd/MM/yyyy' }}

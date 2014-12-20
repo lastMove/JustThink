@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('justThinkApp')
-  .controller('QuotelistCtrl', function ($scope, $http, ngTableParams) {
+  .controller('QuotelistCtrl', function ($scope, $http, $filter, ngTableParams) {
     $scope.message = 'Hello';
     $http.get('/api/quotes').success(function(quotes)
     {
+    	console.log(quotes);
     	$scope.quotes = quotes;
 
     	$scope.tableQuotes = new ngTableParams({
         page: 1,            // show first page
         count: 10,          // count per page
         sorting: {
-            name: 'asc'     // initial sorting
+            author: 'desc'     // initial sorting
         }
     }, {
         total: quotes.length, // length of data
