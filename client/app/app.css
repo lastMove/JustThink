@@ -35,5 +35,5 @@
 .browsehappy { margin: 0.2em 0; background: #ccc; color: #000; padding: 0.2em 0; }
 .inline-block { display: inline-block !important; margin-right: 5px; }
 .italic { font-style: italic; }
-.ng-table { border: 1px solid #000; }
+.ng-table { border: none !important; }
 .top20 { margin-top: 20px; }

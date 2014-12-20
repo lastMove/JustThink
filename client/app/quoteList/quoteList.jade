@@ -8,14 +8,18 @@ div(ng-include='"components/navbar/navbar.html"')
 				.col-md-12
 					.panel.panel-default
 						.panel-heading
-							h2.inline-block Quotes
+							h2.inline-block 
+								span.glyphicon.glyphicon-comment
+								span  
+								span Quotes
 							span.italic There is {{quotes.length}} quotes on Just Think
 			.row
 				.col-md-12
 					.panel.panel-default
 						.panel-body
-							table.table(ng-table="tableQuotes")
-								tr(ng-repeat="quote in quotes")
-									td(data-title="'Author'" sortable="'author'") {{quote.author || "Inconnu"}}
-									td(data-title="'Quote'") {{quote.text}}
+							table.table.ng-table-rowselected(ng-table="tableQuotes" show-filter="true")
+								tr(ng-repeat="quote in quotes"
+									ng-class="{'active': user.$selected}")
+									td(data-title="'Author'" sortable="'author'" filter="{ 'author': 'text'}") {{quote.author || "Inconnu"}}
+									td(data-title="'Quote'" filter="{ 'quote': 'text'}") {{quote.text}}
 									td(data-title="'Date'" sortable="'date'") {{quote.created | date:'dd/MM/yyyy' }}
